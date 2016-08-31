@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Web.Models.PetViewModels.PetIndexViewModel>
+
+@{
+    ViewData["Title"] = "Pets";
+}
+
+<h1>World of Warcraft Pets</h1>
+
+<div class="container">
+    <div class="row">
+        @foreach (var pet in @Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin:10px">
+                <a asp-controller="Pet" asp-action="Detail" asp-route-id="@pet.CreatureId">
+                    <bn-icon icon-name="@pet.Icon" icon-size="18"></bn-icon>
+                    <label>
+                        @pet.Name
+                        @if (pet.Votes > 0)
+                        {
+                            <span style="margin-left:5px" class="badge">
+                                @pet.Votes
+                            </span>
+                        }
+                    </label>
+                </a>
+            </div>
+        }
+    </div>
+</div>
