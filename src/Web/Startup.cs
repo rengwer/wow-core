@@ -58,10 +58,11 @@ namespace Web
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddSingleton<IBattleNetPetProxy, BattleNetPetProxy>();
-            services.AddSingleton<IBattleNetSpeciesProxy, BattleNetSpeciesProxy>();
-            services.AddSingleton<IPetService, PetService>();
-            services.AddSingleton<IVoteService, VoteService>();
+            services.AddTransient<IBattleNetPetProxy, BattleNetPetProxy>();
+            services.AddTransient<IBattleNetSpeciesProxy, BattleNetSpeciesProxy>();
+            services.AddTransient<IPetService, PetService>();
+            services.AddTransient<IVoteService, VoteService>();
+            services.AddTransient<IUserVoteService, UserVoteService>();
 
             //options
             services.AddOptions();

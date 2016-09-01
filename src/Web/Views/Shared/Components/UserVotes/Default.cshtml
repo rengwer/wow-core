@@ -1,0 +1,19 @@
+@model IEnumerable<Web.Models.VoteViewModels.UserVoteViewModel>
+
+<h3>Your Votes</h3>
+
+<table class="table">
+    <tbody>
+        @foreach (var vote in Model)
+        {
+            <tr>
+                <td>
+                    <bn-icon icon-size="18" icon-name="@vote.Icon"></bn-icon>
+                </td>
+                <td>
+                    <label>@vote.Name</label>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

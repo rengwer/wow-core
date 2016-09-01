@@ -1,8 +1,8 @@
 ﻿using Web.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.Models.VoteViewModels;
 
 namespace Web.Services
 {
@@ -15,6 +15,7 @@ namespace Web.Services
     public class VoteService : IVoteService
     {
         private ApplicationDbContext Context { get; set; }
+
         public VoteService(ApplicationDbContext context)
         {
             Context = context;
