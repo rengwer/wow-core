@@ -4,3 +4,4 @@
 **/*lock.json
 **/*.suo
 **/lib
+**/.vs

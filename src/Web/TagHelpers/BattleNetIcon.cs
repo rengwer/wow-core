@@ -26,7 +26,7 @@ namespace Web.TagHelpers
                 throw new Exception(
                     $"{BattleNetIconSizeAttributeName} is not valid. Options include {String.Join(", ", ValidIconSizes)}");
 
-            var url = $"https://us.media.blizzard.com/wow/icons/{IconSize}/{IconName}.jpg";
+            var url = $"http://us.media.blizzard.com/wow/icons/{IconSize}/{IconName}.jpg";
             output.Content.SetHtmlContent($"<img src='{url}' asp-append-version='true'></img>");
 
             base.Process(context, output);
