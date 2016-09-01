@@ -15,10 +15,6 @@ namespace Web
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                //(options => options.UseHttps( new HttpsConnectionFilterOptions(){
-                //    ServerCertificate = new X509Certificate2(@"C:\Users\rengwer\desktop\TempCA.cer", "bob"),
-                //    ClientCertificateMode = ClientCertificateMode.RequireCertificate
-                //}))
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
