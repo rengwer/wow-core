@@ -16,6 +16,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/bbb6d00c-7b83-4190-8924-d123a1d72797/resourcegroups/wow-core/providers/microsoft.insights/components/wow-core</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />

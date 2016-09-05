@@ -22,7 +22,7 @@ namespace Web
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-                //.AddUserSecrets();
+            //.AddUserSecrets();
 
             if (env.IsDevelopment())
             {
@@ -32,7 +32,7 @@ namespace Web
                 // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
                 builder.AddApplicationInsightsSettings(developerMode: true);
             }
-            
+
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -78,6 +78,9 @@ namespace Web
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            var logger = loggerFactory.CreateLogger("Info");
+            logger.LogInformation("Is Development {0}", env.IsDevelopment());
+            logger.LogInformation("Is Staging {0}", env.IsStaging());
 
             app.UseApplicationInsightsRequestTelemetry();
 
