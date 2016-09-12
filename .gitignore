@@ -6,3 +6,4 @@
 **/lib
 **/.vs
 **/*.user
+/src/Web/Service References/Application Insights
