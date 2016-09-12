@@ -11,6 +11,7 @@ using Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Web.Models.Options;
 using Web.Services.BattleNet;
+using Microsoft.AspNetCore.Http;
 
 namespace Web
 {
@@ -22,7 +23,6 @@ namespace Web
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-            //.AddUserSecrets();
 
             if (env.IsDevelopment())
             {
@@ -83,7 +83,7 @@ namespace Web
             logger.LogInformation("Is Staging {0}", env.IsStaging());
 
             app.UseApplicationInsightsRequestTelemetry();
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
