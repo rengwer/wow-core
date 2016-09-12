@@ -1,5 +1,5 @@
 ﻿{
-  "userSecretsId": "aspnet-Web-cf857120-0b0b-4d5b-9380-ae01c2dbe905",
+  "userSecretsId": "aspnet-Web-9103d2b1-c9e7-40c9-9771-331b554b8935",
 
   "dependencies": {
     "Microsoft.NETCore.App": {
@@ -8,7 +8,6 @@
     },
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
-    "AspNet.Security.OAuth.BattleNet": "1.0.0-beta1-final",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
@@ -19,7 +18,6 @@
     },
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel.Https": "1.0.0",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
     "Microsoft.EntityFrameworkCore.SqlServer.Design": {
@@ -42,7 +40,7 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc":  {
       "version": "1.0.0-preview2-final",
       "type": "build"
     }

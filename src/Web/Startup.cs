@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +12,6 @@ using Microsoft.Extensions.Logging;
 using Web.Data;
 using Web.Models;
 using Web.Services;
-using Microsoft.AspNetCore.Mvc;
-using Web.Models.Options;
-using Web.Services.BattleNet;
-using Microsoft.AspNetCore.Http;
 
 namespace Web
 {
@@ -53,24 +53,10 @@ namespace Web
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-            services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
-            
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddTransient<IBattleNetPetProxy, BattleNetPetProxy>();
-            services.AddTransient<IBattleNetSpeciesProxy, BattleNetSpeciesProxy>();
-            services.AddTransient<IPetService, PetService>();
-            services.AddTransient<IVoteService, VoteService>();
-            services.AddTransient<IUserVoteService, UserVoteService>();
-
-            //options
-            services.AddOptions();
-            services.Configure<BattleNetOptions>(options => {
-                options.BaseApiUrl = Configuration["AppSettings:BattleNet_BaseApiUrl"];
-                options.ClientId = Configuration["BattleNet_ClientId"];
-                options.ClientSecret = Configuration["BattleNet_ClientSecret"];
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,12 +64,9 @@ namespace Web
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            var logger = loggerFactory.CreateLogger("Info");
-            logger.LogInformation("Is Development {0}", env.IsDevelopment());
-            logger.LogInformation("Is Staging {0}", env.IsStaging());
 
             app.UseApplicationInsightsRequestTelemetry();
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -102,11 +85,6 @@ namespace Web
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-            app.UseBattleNetAuthentication(options => {
-                options.ClientId = Configuration["BattleNet_ClientId"];
-                options.ClientSecret = Configuration["BattleNet_ClientSecret"];
-            });
-
 
             app.UseMvc(routes =>
             {

@@ -6,13 +6,11 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>86580d5f-130b-4569-8ffb-9a174de78e3b</ProjectGuid>
+    <ProjectGuid>face75f5-3c0a-4ea5-ab4a-ac50d6295c5c</ProjectGuid>
+    <RootNamespace>Web</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration">
-    <RootNamespace>Web</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>

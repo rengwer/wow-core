@@ -4,8 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.AspNetCore.Server.Kestrel.Https;
 
 namespace Web
 {
